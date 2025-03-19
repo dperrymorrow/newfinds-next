@@ -5,6 +5,6 @@ export function getSlug(post: Post): string {
   return slugify(post.title, { lower: true, strict: true });
 }
 
-export function getLink(post: Post): string {
-  return `/${post.id}/${getSlug(post)}`;
+export function getLinkForArticle(post: Post): string {
+  return `/articles/${getSlug(post)}`;
 }

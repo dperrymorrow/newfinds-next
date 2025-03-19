@@ -1,0 +1,7 @@
+.recent-posts {
+  small {
+    display: block;
+    font-size: 1rem;
+    margin-left: 0.3em;
+  }
+}

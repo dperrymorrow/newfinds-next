@@ -1,0 +1,47 @@
+body,
+html {
+  padding: 0;
+  margin: 0;
+  background: var(--bg);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--txt);
+  font-size: var(--font-size);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
+  height: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+main {
+  font-family: var(--font-body);
+  background-color: var(--foreground);
+  box-shadow: var(--box-shadow);
+  max-width: 1000px;
+  line-height: 1.7em;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  background-color: var(--bg-2);
+  padding: var(--padding-lg);
+  padding-top: var(--padding-xs);
+}
+
+article {
+  padding: var(--padding-lg);
+  max-width: 1000px;
+}
+
+aside {
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+}

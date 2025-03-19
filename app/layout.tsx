@@ -1,15 +1,13 @@
-import "@picocss/pico";
 import "@/app/styles/vars.css";
-import "@/app/styles/global.css";
-import "@/app/styles/nav.css";
+import "@/app/styles/layout.css";
+import "@/app/styles/markdown.css";
+import "@/app/styles/responsive.css";
 
-import Script from "next/script";
+import type { Post } from "@/app/lib/types";
+
 import Head from "next/head";
-import Link from "next/link";
-
-import type { Post } from "@/lib/types";
-import { getLink } from "@/lib/utils";
-import { getAllPosts } from "@/lib/api";
+import Nav from "@/app/components/nav";
+import { getAllPosts } from "@/app/lib/api";
 
 export default async function Layout({
   children,
@@ -21,36 +19,13 @@ export default async function Layout({
   return (
     <html>
       <Head>
-        <title>My Website</title>
-        <meta name="description" content="My Website Description" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
       <body>
         <main>{children}</main>
-
-        <aside className="nav">
-          <nav>
-            <ul>
-              <li>
-                <Link href="/">Home</Link>
-              </li>
-              <li>
-                <Link href="/about">About</Link>
-              </li>
-              <li>
-                <Link href="/contact">Contact</Link>
-              </li>
-              {posts.map((post: Post) => (
-                <li key={post.id}>
-                  <Link href={getLink(post)}>{post.title}</Link>
-                  {post.tag_list.map((tag) => (
-                    <span key={tag}>{tag}</span>
-                  ))}
-                  {post.positive_reactions_count}
-                </li>
-              ))}
-            </ul>
-          </nav>
+        <aside>
+          <Nav posts={posts} />
         </aside>
       </body>
     </html>

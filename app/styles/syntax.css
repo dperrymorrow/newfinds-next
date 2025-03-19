@@ -1,26 +1,46 @@
-@import url("https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/github.css");
-
 pre {
-  /* background-color: #303845 !important; */
-  border-radius: var(--border-radius);
+  code.hljs {
+    display: block;
+    white-space: pre;
+    background: transparent;
+    overflow-x: auto;
+    scrollbar-color: #555 transparent;
+  }
 }
 
-code[class*="language-"],
-pre[class*="language-"] {
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
-  background: transparent;
+pre {
+  font-size: 0.9rem;
   font-family: Monaco, Mono, monospace;
-  font-size: 0.9em;
-  line-height: 1.5em;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  line-height: 1.7em;
+  background-color: #282c33;
+  position: relative;
+  padding: var(--padding-md);
+}
+
+code.hljs:before {
+  position: absolute;
+  top: 0.3em;
+  right: 0.3em;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.2em 0.4em;
+  border-radius: var(--border-radius);
+  font-weight: bold;
+}
+
+code.language-javascript:before {
+  content: "JS";
+}
+
+code.language-html:before {
+  content: "HTML";
+}
+
+code.language-css:before {
+  content: "CSS";
+}
+
+code.language-bash:before {
+  content: "BASH";
 }

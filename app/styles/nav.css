@@ -1,70 +1,40 @@
-aside.nav {
-  padding: var(--padding-lg);
-  padding-left: var(--padding-lg);
-  position: sticky;
-  top: 0;
+nav {
+  /* padding-left: var(--padding-sm); */
+  padding: var(--padding-lg) 0;
+  max-width: 400px;
 
-  &.active {
-    border-bottom: 1px solid var(--border);
-    box-shadow: var(--box-shadow);
-    margin-bottom: var(--padding-sm);
-    background-color: var(--foreground);
-
-    nav {
-      display: block;
-    }
+  .toggle {
+    display: none;
   }
 
-  section.about {
-    display: flex;
-    margin-bottom: var(--padding-md);
-    border-bottom: 1px solid var(--border);
-    padding-bottom: var(--padding-md);
-    align-items: center;
+  ul {
+    font-family: var(--font-header);
+    list-style: none;
+    padding: 0;
+    margin: 0;
 
-    img {
-      border-radius: 50%;
-      box-shadow: inner 0px 0px 3px 3px rgba(0, 0, 0, 0.5);
-      border: 3px solid var(--border);
-      margin-right: var(--padding-sm);
-      max-width: 150px;
-    }
-
-    a {
-      font-size: 1.1em;
-    }
-  }
-
-  nav {
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    &:first-child {
+      border-bottom: 1px solid var(--border);
     }
 
     li {
-      margin: 0;
-      /* padding: var(--padding-xs) 0; */
-    }
+      a {
+        transition: background-color 0.8s ease-out;
+        font-size: 1.3rem;
+        font-weight: 350;
+        text-wrap: balance;
+        display: block;
+        color: var(--nav-txt);
+        text-decoration: none;
+        padding: var(--padding-xs) var(--padding-md);
+        border-top-right-radius: var(--border-radius);
+        border-bottom-right-radius: var(--border-radius);
+        margin-bottom: 1px;
 
-    a {
-      text-decoration: none;
-      font-size: 0.9em;
-      color: var(--nav-txt);
-      line-height: 1.2em;
-      display: block;
-      padding: var(--padding-xs);
-      transition: all 0.3s ease;
-      font-weight: 400;
-      border-bottom: none;
-      font-family: var(--font-header);
-
-      &:hover,
-      &.active {
-        border-radius: 0.3em;
-        color: var(--link-txt);
-        background-color: var(--link-bg);
-        border-color: var(--link-txt);
+        &.active,
+        &:hover {
+          background-color: rgb(54, 56, 56, 0.1);
+        }
       }
     }
   }

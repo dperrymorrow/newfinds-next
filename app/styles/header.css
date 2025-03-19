@@ -1,0 +1,60 @@
+header {
+  position: relative;
+
+  figure {
+    margin: 0;
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    figcaption {
+      padding-left: var(--padding-lg);
+      font-style: italic;
+      color: var(--txt-light);
+      font-size: 0.8em;
+    }
+  }
+
+  img.headshot {
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: var(--box-shadow);
+    position: absolute;
+    right: 50px;
+    bottom: -20px;
+  }
+
+  h1 {
+    padding: var(--padding-md) var(--padding-lg);
+    letter-spacing: -0.036em;
+    font-size: 4.2rem;
+    line-height: 1.1em;
+    text-wrap: balance;
+    word-break: keep-all;
+    color: var(--txt-light);
+    font-family: var(--font-title);
+    font-weight: 300;
+
+    small {
+      font-size: 0.5em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      letter-spacing: 0em;
+      line-height: 1.5em;
+      color: var(--txt-light);
+      padding-left: 0.1em;
+      margin-bottom: var(--padding-sm);
+      position: relative;
+
+      .likes {
+        font-size: 0.8em;
+        color: rgba(176, 65, 65);
+      }
+    }
+  }
+}

@@ -20,11 +20,11 @@ export type Post = {
   url: string;
   comments_count: number;
   public_reactions_count: number;
+  positive_reactions_count: number;
   collection_id: number | null;
   published_timestamp: string;
   language: string;
   subforem_id: number | null;
-  positive_reactions_count: number;
   cover_image: string | null;
   social_image: string;
   canonical_url: string;
@@ -43,3 +43,12 @@ export type PostDetails = {
   body_html: string;
   body_markdown: string;
 } & Post;
+
+export type Comment = {
+  type_of: string;
+  id_code: string;
+  created_at: string;
+  body_html: string;
+  user: User;
+  children: Comment[];
+};

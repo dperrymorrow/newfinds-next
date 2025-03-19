@@ -20,7 +20,6 @@
     ],
     "strictNullChecks": true,
     "paths": {
-      "@/lib/*": ["./lib/*"],
       "@/app/*": ["./app/*"]
     }
   },
