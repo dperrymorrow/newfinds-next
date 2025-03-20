@@ -1,9 +1,11 @@
 import { Post, PostDetails, Comment } from "./types";
 import { getSlug } from "./utils";
 
+const username = "dperrymorrow";
+
 export async function getAllPosts(): Promise<Post[]> {
   const res: Response = await fetch(
-    `https://dev.to/api/articles?username=${process.env.USERNAME}&page=1&per_page=100`,
+    `https://dev.to/api/articles?username=${username}&page=1&per_page=100`,
   );
   return await res.json();
 }
