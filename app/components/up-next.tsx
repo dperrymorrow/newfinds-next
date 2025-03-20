@@ -9,21 +9,21 @@ type Props = {
   postId: number;
 };
 
+function shuffle(arr: Post[]): Post[] {
+  return arr.sort(() => Math.random() - 0.5);
+}
+
 export default async function UpNext({ postId }: Props): Promise<JSX.Element> {
   const posts: Post[] = await getAllPosts();
   const filtered = posts.filter(({ id }) => id !== postId);
-
-  const randomIndex = () => Math.floor(Math.random() * filtered.length);
-  const randomPosts = [randomIndex(), randomIndex(), randomIndex()].map(
-    (index) => filtered[index],
-  );
+  const randomPosts = shuffle(filtered).slice(0, 3);
 
   return (
     <div className="up-next">
       <h2>Keep Reading:</h2>
       <ul>
         {randomPosts.map((post) => (
-          <li>
+          <li key={post.id}>
             <Link key={post.id} href={getLinkForArticle(post)}>
               {post.title}
             </Link>
