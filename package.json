@@ -16,6 +16,7 @@
   "author": "David Morrow",
   "license": "MIT",
   "dependencies": {
+    "@next/third-parties": "^15.2.3",
     "next": "^15.2.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

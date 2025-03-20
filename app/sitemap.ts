@@ -3,7 +3,7 @@ import { getAllPosts } from "@/app/lib/api";
 import { getLinkForArticle } from "@/app/lib/utils";
 
 export const dynamic = "force-static";
-const baseUrl = "https://newfinds.com";
+import { baseUrl } from "./lib/consts";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const posts = await getAllPosts();

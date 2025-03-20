@@ -8,6 +8,8 @@ import type { Post } from "@/app/lib/types";
 import Head from "next/head";
 import Nav from "@/app/components/nav";
 import { getAllPosts } from "@/app/lib/api";
+import { gaId } from "@/app/lib/consts";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export default async function Layout({
   children,
@@ -27,6 +29,7 @@ export default async function Layout({
         <aside>
           <Nav posts={posts} />
         </aside>
+        <GoogleAnalytics gaId={gaId} />
       </body>
     </html>
   );

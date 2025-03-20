@@ -1,7 +1,6 @@
 import { Post, PostDetails, Comment } from "./types";
 import { getSlug } from "./utils";
-
-const username = "dperrymorrow";
+import { username } from "./consts";
 
 export async function getAllPosts(): Promise<Post[]> {
   const res: Response = await fetch(
