@@ -11,6 +11,7 @@ const nextConfig: NextConfig = {
 
   // Optional: Change the output directory `out` -> `dist`
   // distDir: "output",
+  basePath: "/",
   compress: true,
   images: {
     unoptimized: true,
