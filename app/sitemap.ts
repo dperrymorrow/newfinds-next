@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
-import { getAllPosts } from "@/lib/api";
-import { getLinkForArticle } from "@/lib/utils";
+import { getAllPosts } from "@/app/lib/api";
+import { getLinkForArticle } from "@/app/lib/utils";
 
 export const dynamic = "force-static";
 
