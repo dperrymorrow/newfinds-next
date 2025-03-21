@@ -9,9 +9,7 @@ type Props = {
   postId: number;
 };
 
-function shuffle(arr: Post[]): Post[] {
-  return arr.sort(() => Math.random() - 0.5);
-}
+const shuffle = (arr: Post[]): Post[] => arr.sort(() => Math.random() - 0.5);
 
 export default async function UpNext({ postId }: Props): Promise<JSX.Element> {
   const posts: Post[] = await getAllPosts();

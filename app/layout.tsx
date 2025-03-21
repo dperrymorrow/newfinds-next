@@ -20,10 +20,6 @@ export default async function Layout({
 
   return (
     <html>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
-
       <body>
         <main>{children}</main>
         <aside>

@@ -1,17 +1,17 @@
+import type { Metadata } from "next";
+
 import Header from "@/app/components/header";
 import RecentPosts from "./components/recent-posts";
-import Head from "next/head";
+
+export const metadata: Metadata = {
+  title: "David Morrow",
+  description:
+    "Technical articles about Javascript, React, and Next.js development",
+};
 
 export default function Page() {
   return (
     <>
-      <Head>
-        <title>David Morrow</title>
-        <meta
-          name="description"
-          content="Technical articles about Javascript development"
-        />
-      </Head>
       <Header
         imgSrc="/images/hood.jpg"
         title="Hi, I'm David Morrow"
