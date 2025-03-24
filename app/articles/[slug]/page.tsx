@@ -5,7 +5,6 @@ import type { JSX } from "react";
 import Markdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
 
-import { getSlug } from "@/app/lib/utils";
 import { getAllPosts, getComments, getPostBySlug } from "@/app/lib/api";
 import Header from "@/app/components/header";
 import UpNext from "@/app/components/up-next";
@@ -24,12 +23,10 @@ type DynamicArgs = {
 
 export async function generateStaticParams(): Promise<Params[]> {
   const posts: Post[] = await getAllPosts();
-  return posts.map((post: Post) => ({ slug: getSlug(post) }));
+  return posts.map((post: Post) => ({ slug: post.slug }));
 }
 
-export async function generateMetadata({
-  params,
-}: DynamicArgs): Promise<Metadata> {
+export async function generateMetadata({ params }: DynamicArgs): Promise<Metadata> {
   const { slug } = await params;
   const post: PostDetails = await getPostBySlug(slug);
 
@@ -39,9 +36,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function Page({
-  params,
-}: DynamicArgs): Promise<JSX.Element> {
+export default async function Page({ params }: DynamicArgs): Promise<JSX.Element> {
   const { slug } = await params;
   const post: PostDetails = await getPostBySlug(slug);
   const comments = await getComments(post.id);
@@ -51,10 +46,7 @@ export default async function Page({
       <Header post={post} imgSrc={post.cover_image} title={post.title} />
 
       <article className="md">
-        <Markdown rehypePlugins={[rehypeHighlight]}>
-          {post.body_markdown}
-        </Markdown>
-
+        <Markdown rehypePlugins={[rehypeHighlight]}>{post.body_markdown}</Markdown>
         <UpNext postId={post.id} />
       </article>
 

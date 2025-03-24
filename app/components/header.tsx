@@ -10,13 +10,7 @@ type Props = {
   children?: JSX.Element;
 };
 
-export default function Header({
-  imgSrc,
-  post,
-  title,
-  caption,
-  children,
-}: Props): JSX.Element {
+export default function Header({ imgSrc, post, title, caption, children }: Props): JSX.Element {
   const image: React.ReactNode | null = imgSrc ? (
     <figure>
       <img src={imgSrc} width={1000} height={420} />

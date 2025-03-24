@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/app/lib/api";
-import { getLinkForArticle } from "@/app/lib/utils";
 
 export const dynamic = "force-static";
 import { baseUrl } from "./lib/consts";
@@ -10,7 +9,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return posts
     .map((post) => ({
-      url: baseUrl + getLinkForArticle(post),
+      url: baseUrl + `/articles/${post.slug}`,
       lastModified: new Date(),
       priority: 1,
     }))

@@ -1,6 +1,6 @@
 import type { JSX } from "react";
 import Link from "next/link";
-import { getLinkForArticle } from "@/app/lib/utils";
+
 import { getAllPosts } from "@/app/lib/api";
 import type { Post } from "@/app/lib/types";
 import "@/app/styles/up-next.css";
@@ -22,7 +22,7 @@ export default async function UpNext({ postId }: Props): Promise<JSX.Element> {
       <ul>
         {randomPosts.map((post) => (
           <li key={post.id}>
-            <Link key={post.id} href={getLinkForArticle(post)}>
+            <Link key={post.id} href={`/articles/${post.slug}`}>
               {post.title}
             </Link>
           </li>
